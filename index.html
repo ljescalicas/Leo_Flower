@@ -919,53 +919,6 @@
 
 
     </script>
-
-<div id="valentineMessage" style="display: none; position: absolute; top: 30%; left: 50%; transform: translateX(-50%); 
-     font-family: 'Brush Script MT', cursive; color: #ff69b4; font-size: 2em; text-align: center; 
-     text-shadow: 2px 2px 4px rgba(0,0,0,0.3); z-index: 999;">
-    🌹 My Dearest,<br>
-    Your love makes every moment magical.<br>
-    Happy Valentine's Day! 🌹
-</div>
-
-<script>
-
-document.querySelector('.shade-wrap').addEventListener('click', function() {
-    const message = document.getElementById('valentineMessage');
-    message.style.display = 'block';
-    
-    // Add some animation
-    message.animate([
-        { opacity: 0, transform: 'translate(-50%, -20px)' },
-        { opacity: 1, transform: 'translate(-50%, 0)' }
-    ], {
-        duration: 1000,
-        easing: 'ease-out'
-    });
-    
-    // Optional: Add falling hearts
-    for(let i = 0; i < 10; i++) {
-        const heart = document.createElement('div');
-        heart.innerHTML = '❤️';
-        heart.style.position = 'absolute';
-        heart.style.left = Math.random() * 100 + '%';
-        heart.style.animation = `fall ${Math.random()*2 + 3}s linear`;
-        document.body.appendChild(heart);
-        
-        setTimeout(() => heart.remove(), 5000);
-    }
-});
-
-// Add this CSS animation for falling hearts
-const style = document.createElement('style');
-style.textContent = `
-@keyframes fall {
-    0% { top: -10%; opacity: 1; }
-    100% { top: 110%; opacity: 0; }
-}
-`;
-document.head.appendChild(style);
-</script>
 </body>
 
 </html>
